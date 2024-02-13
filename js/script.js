@@ -187,10 +187,12 @@ function validateFormSubmit() {
         : product1 == "13"
         ? "Rainbow T-shirt - $13.00"
         : product1 == "9"
-        ? "Four Set T-shirt - $9.00"
+        ? "Four Set Shirt - $9.00"
         : product1 == "3"
-        ? "T-shirt Glasses - $3.00"
-        : "Green T-shirt - $4.00";
+        ? "Shirt & Glasses - $3.00"
+        : product1 == "4"
+        ? "Green T-shirt - $4.00"
+        : "No Product Selected";
 
     var productBought2 =
       product2 == "7"
@@ -212,10 +214,12 @@ function validateFormSubmit() {
         : product2 == "13"
         ? "Rainbow T-shirt - $13.00"
         : product2 == "9"
-        ? "Four Set T-shirt - $9.00"
+        ? "Four Set Shirt - $9.00"
         : product2 == "3"
-        ? "T-shirt Glasses - $3.00"
-        : "Green T-shirt - $4.00";
+        ? "Shirt & Glasses - $3.00"
+        : product2 == "4"
+        ? "Green T-shirt - $4.00"
+        : "No Product Selected";
 
     //Calculating Sales tax according to province
     var salesTax =
