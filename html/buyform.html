@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buying Form</title>
+    <!-- Calling Css  -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <!-- Calling JavaScript -->
+    <script type="text/javascript" src="../js/script.js"></script>
+    <!-- Font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo"><a href="#">Bigem Maharjan</a></div>
+        <ul class="links">
+          <li><a href="#">SB Clothes</a></li>
+          <li><a href="index.html">Products</a></li>
+        </ul>
+        <a href="buyform.html" class="action_btn">Buy Form</a>
+      </div>
+    </header>
+    <!-- Creating div with container class -->
+    <main>
+      <section class="formSection">
+        <form
+          name="myform"
+          method="Post"
+          onsubmit="return validateFormSubmit(); return false;"
+          action=""
+        >
+          <h1>Complete the form to buy the products</h1>
+
+          <!-- Name -->
+          <div class="input-control">
+            <label>Name</label>
+            <input id="namee" type="text" name="namee" />
+          </div>
+
+          <!-- Phone -->
+          <div class="input-control">
+            <label>Phone</label>
+            <input
+              id="phone"
+              type="phone"
+              name="phone"
+              placeholder="123-456-7890"
+            />
+          </div>
+
+          <!-- Postcode -->
+          <div class="input-control">
+            <label>Postcode</label>
+            <input
+              id="postcode"
+              type="postcode"
+              name="postcode"
+              placeholder="X1X 1X1"
+            />
+          </div>
+
+          <!-- Address -->
+          <div class="input-control">
+            <label>Address</label>
+            <input id="address" type="text" name="address" />
+          </div>
+
+          <!-- City -->
+          <div class="input-control">
+            <label>City</label>
+            <input id="city" type="text" name="city" />
+          </div>
+
+          <!-- Province -->
+          <div class="input-control">
+            <label>Province</label>
+            <select id="province" name="province">
+              <option value="">--------------- Select ---------------</option>
+              <option value="Alberta">Alberta</option>
+              <option value="British Columbia">British Columbia</option>
+              <option value="Manitoba">Manitoba</option>
+              <option value="Newbrunswick">New Brunswick</option>
+              <option value="Newfoundland">Newfoundland</option>
+              <option value="Labrador">Labrador</option>
+              <option value="Nova Scotia">Nova Scotia</option>
+              <option value="Ontario">Ontario</option>
+              <option value="Prince Edward Island">Prince Edward Island</option>
+              <option value="Quebec">Quebec</option>
+              <option value="Saskatchewan">Saskatchewan</option>
+            </select>
+          </div>
+
+          <!-- Email -->
+          <div class="input-control">
+            <label>Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="xyz@gmail.com"
+            />
+          </div>
+
+          <!-- Credit Card Number-->
+          <div class="input-control">
+            <label>Credit Card</label>
+            <input
+              id="creditcard"
+              type="text"
+              name="creditcard"
+              maxlength="19"
+              placeholder="xxxx-xxxx-xxxx-xxxx"
+            />
+          </div>
+
+          <!-- Credit card expiry month -->
+          <div class="input-control">
+            <label>Expiry Month</label>
+            <select id="creditcardexpmonth" name="creditcardexpmonth">
+              <option value="">--------------- Select ---------------</option>
+              <option value="JAN">January</option>
+              <option value="FEB">February</option>
+              <option value="MAR">March</option>
+              <option value="APR">April</option>
+              <option value="MAY">May</option>
+              <option value="JUN">June</option>
+              <option value="JUL">July</option>
+              <option value="AUG">August</option>
+              <option value="SEP">September</option>
+              <option value="OCT">October</option>
+              <option value="NOV">November</option>
+              <option value="DEC">December</option>
+            </select>
+          </div>
+
+          <!-- Credit card expiry year -->
+          <div class="input-control">
+            <label>Expiry Year</label>
+            <input
+              id="creditcardexpyear"
+              type="number"
+              name="creditcardexpyear"
+              min="2024"
+              max="2100"
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="input-control">
+            <label>Password</label>
+            <input id="password" type="password" name="password" />
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="input-control">
+            <label>Confirm Password</label>
+            <input
+              id="confirmpassword"
+              type="password"
+              name="confirmpassword"
+            />
+          </div>
+
+          <!-- First Products to buy -->
+          <div class="input-control">
+            <label>Select Products you want to buy</label>
+            <select id="product" name="product">
+              <option value="">--------------- Select ---------------</option>
+              <option value="7">Original T-shirt - $7.00</option>
+              <option value="8">Skyblue - $8.00</option>
+              <option value="10">Black Vibing - $10.00</option>
+              <option value="5">White T-shirt - $5.00</option>
+              <option value="6">Colorful T-shirt - $6.00</option>
+              <option value="17">Three Set - $17.00</option>
+              <option value="14">Two White T-shirt - $14.00</option>
+              <option value="12">Knot T-shirt - $12.00</option>
+              <option value="13">Rainbow T-shirt - $13.00</option>
+              <option value="9">Four Set T-shirt - $9.00</option>
+              <option value="3">T-shirt Glasses - $3.00</option>
+              <option value="4">Green T-shirt - $4.00</option>
+            </select>
+          </div>
+
+          <!-- Second Products to buy -->
+          <div class="input-control">
+            <label>Select Products you want to buy</label>
+            <select id="secondproduct" name="secondproduct">
+              <option value="">--------------- Select ---------------</option>
+              <option value="7">Original T-shirt - $7.00</option>
+              <option value="8">Skyblue - $8.00</option>
+              <option value="10">Black Vibing - $10.00</option>
+              <option value="5">White T-shirt - $5.00</option>
+              <option value="6">Colorful T-shirt - $6.00</option>
+              <option value="17">Three Set - $17.00</option>
+              <option value="14">Two White T-shirt - $14.00</option>
+              <option value="12">Knot T-shirt - $12.00</option>
+              <option value="13">Rainbow T-shirt - $13.00</option>
+              <option value="9">Four Set T-shirt - $9.00</option>
+              <option value="3">T-shirt Glasses - $3.00</option>
+              <option value="4">Green T-shirt - $4.00</option>
+            </select>
+          </div>
+
+          <input class="btn" type="submit" value="Submit" />
+        </form>
+      </section>
+
+      <!-- To display the errors -->
+      <section class="formSection">
+        <div class="formErrorData">
+          <h1>Errors</h1>
+          <p id="errors"></p>
+        </div>
+      </section>
+
+      <section class="formSection">
+        <div class="formResultData">
+          <h1>Your Receipt</h1>
+          <p id="formResult"></p>
+        </div>
+      </section>
+
+      <div class="clear"></div>
+    </main>
+  </body>
+</html>
