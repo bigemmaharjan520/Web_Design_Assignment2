@@ -1,6 +1,7 @@
 function validateFormSubmit() {
   var myOutput = ""; //This will be used to store the output of the form and to display the details
   var errors = ""; //This will be used to store any messages
+  var totalCostBT = 0; //This is for storing total cost before tax
 
   var namee = document.getElementById("namee").value;
   var phone = document.getElementById("phone").value;
@@ -16,6 +17,8 @@ function validateFormSubmit() {
   var confirmpassword = document.getElementById("confirmpassword").value;
   var product1 = document.getElementById("product").value;
   var product2 = document.getElementById("secondproduct").value;
+  var numberProduct1 = document.getElementById("productNumberFirst").value;
+  var numberProduct2 = document.getElementById("productNumberSecond").value;
 
   //using if else statement
   //three equal to refers to strict equality operator checking every type and value.
@@ -130,33 +133,65 @@ function validateFormSubmit() {
   }
 
   // Products Bought Validation and calculation of the total cost before tax
-  if (product1 == "" && product2 == "") {
-    errors += "Selecting product is required <br/>";
+  //Checking whether the number of buying product is entered or not
+  if (
+    product1 == "" &&
+    numberProduct1 == "" &&
+    product2 == "" &&
+    numberProduct2 == ""
+  ) {
+    errors += "Selecting product and quantity is required <br/>";
   }
   //Checking if the product bought by user exceeds $10 or not
-  else if (product1 != "" && product2 != "") {
-    var totalCostBT = parseInt(product1) + parseInt(product2);
+  else if (
+    product1 != "" &&
+    numberProduct1 != "" &&
+    product2 != "" &&
+    numberProduct2 != ""
+  ) {
+    totalCostBT =
+      parseInt(product1) * numberProduct1 + parseInt(product2) * numberProduct2;
     if (totalCostBT < 10) {
       errors += "The minimum purchase should be $10 <br/>";
     } else {
       errors += "";
     }
-  } else if (product1 != "" || product2 == "") {
+  } else if (
+    product1 != "" &&
+    numberProduct1 != "" &&
+    product2 == "" &&
+    numberProduct2 == ""
+  ) {
     //Checking if the product bought by user exceeds $10 or not
-    var totalCostBT = parseInt(product1);
+    totalCostBT = parseInt(product1) * numberProduct1;
     if (totalCostBT < 10) {
       errors += "The minimum purchase should be $10 <br/>";
     } else {
       errors += "";
     }
-  } else if (product1 == "" || product2 != "") {
+  } else if (
+    product1 == "" &&
+    numberProduct1 == "" &&
+    product2 != "" &&
+    numberProduct2 != ""
+  ) {
     //Checking if the product bought by user exceeds $10 or not
-    var totalCostBT = parseInt(product2);
+    totalCostBT = parseInt(product2) * numberProduct2;
     if (totalCostBT < 10) {
       errors += "The minimum purchase should be $10 <br/>";
     } else {
       errors += "";
     }
+  } else if (
+    (product1 == "" && numberProduct1 != "") ||
+    (product1 != "" && numberProduct1 == "")
+  ) {
+    errors += "Please select first product as well as its quantity <br/>";
+  } else if (
+    (product2 == "" && numberProduct2 != "") ||
+    (product2 != "" && numberProduct2 == "")
+  ) {
+    errors += "Please select second product as well as its quantity <br/>";
   } else {
     errors += "";
   }
@@ -169,57 +204,81 @@ function validateFormSubmit() {
     //Getting bought product
     var productBought1 =
       product1 == "7"
-        ? "Original T-shirt - $7.00"
+        ? `Original T-shirt - $7.00 X ${numberProduct1}`
         : product1 == "8"
-        ? "Skyblue - 8.00$"
+        ? `Skyblue - $8.00 X ${numberProduct1}`
         : product1 == "10"
-        ? "Black Vibing - $10.00"
+        ? `Black Vibing - $10.00 X ${numberProduct1}`
         : product1 == "5"
-        ? "White T-shirt - $5.00"
+        ? `White T-shirt - $5.00 X ${numberProduct1}`
         : product1 == "6"
-        ? "Colorful T-shirt - $6.00"
+        ? `Colorful T-shirt - $6.00 X ${numberProduct1}`
         : product1 == "17"
-        ? "Three Set - $17.00"
+        ? `Three Set - $17.00 X ${numberProduct1}`
         : product1 == "14"
-        ? "Two White T-shirt - $14.00"
+        ? `Two White T-shirt - $14.00 X ${numberProduct1}`
         : product1 == "12"
-        ? "Knot T-shirt - $12.00"
+        ? `Knot T-shirt - $12.00 X ${numberProduct1}`
         : product1 == "13"
-        ? "Rainbow T-shirt - $13.00"
+        ? `Rainbow T-shirt - $13.00 X ${numberProduct1}`
         : product1 == "9"
-        ? "Four Set Shirt - $9.00"
+        ? `Four Set Shirt - $9.00 X ${numberProduct1}`
         : product1 == "3"
-        ? "Shirt & Glasses - $3.00"
+        ? `Shirt & Glasses - $3.00 X ${numberProduct1}`
         : product1 == "4"
-        ? "Green T-shirt - $4.00"
+        ? `Green T-shirt - $4.00 X ${numberProduct1}`
         : "No Product Selected";
 
     var productBought2 =
       product2 == "7"
-        ? "Original T-shirt - $7.00"
+        ? `Original T-shirt - $7.00 X ${numberProduct2}`
         : product2 == "8"
-        ? "Skyblue - 8.00$"
+        ? `Skyblue - $8.00 X ${numberProduct2}`
         : product2 == "10"
-        ? "Black Vibing - $10.00"
+        ? `Black Vibing - $10.00 X ${numberProduct2}`
         : product2 == "5"
-        ? "White T-shirt - $5.00"
+        ? `White T-shirt - $5.00 X ${numberProduct2}`
         : product2 == "6"
-        ? "Colorful T-shirt - $6.00"
+        ? `Colorful T-shirt - $6.00 X ${numberProduct2}`
         : product2 == "17"
-        ? "Three Set - $17.00"
+        ? `Three Set - $17.00 X ${numberProduct2}`
         : product2 == "14"
-        ? "Two White T-shirt - $14.00"
+        ? `Two White T-shirt - $14.00 X ${numberProduct2}`
         : product2 == "12"
-        ? "Knot T-shirt - $12.00"
+        ? `Knot T-shirt - $12.00 X ${numberProduct2}`
         : product2 == "13"
-        ? "Rainbow T-shirt - $13.00"
+        ? `Rainbow T-shirt - $13.00 X ${numberProduct2}`
         : product2 == "9"
-        ? "Four Set Shirt - $9.00"
+        ? `Four Set Shirt - $9.00 X ${numberProduct2}`
         : product2 == "3"
-        ? "Shirt & Glasses - $3.00"
+        ? `Shirt & Glasses - $3.00 X ${numberProduct2}`
         : product2 == "4"
-        ? "Green T-shirt - $4.00"
+        ? `Green T-shirt - $4.00 X ${numberProduct2}`
         : "No Product Selected";
+
+    //Storing sales tax according to province for displaying to user
+    var provinceTax =
+      province == "Alberta"
+        ? "0.05"
+        : province == "British Columbia"
+        ? "0.12"
+        : province == "Manitoba"
+        ? "0.12"
+        : province == "Newbrunswick"
+        ? "0.15"
+        : province == "Newfoundland"
+        ? "0.15"
+        : province == "Labrador"
+        ? "0.15"
+        : province == "Nova Scotia"
+        ? "0.15"
+        : province == "Ontario"
+        ? "0.13"
+        : province == "Prince Edward Island"
+        ? "0.15"
+        : province == "Quebec"
+        ? "0.14975"
+        : "0.11"; //Saskatchewan
 
     //Calculating Sales tax according to province
     var salesTax =
@@ -263,9 +322,9 @@ function validateFormSubmit() {
               Confirm Password: ${confirmpassword} <br>
               First Product: ${productBought1} <br>
               Second Product: ${productBought2} <br>
-              Total Cost(Before Tax): ${totalCostBT} <br>
-              Sales Tax: ${salesTax}<br>
-              Total Cost(After Tax): ${totalCostAT}<br>     
+              Total Cost(Before Tax): $${totalCostBT} <br>
+              Sales Tax (${provinceTax}): $${salesTax}<br>
+              Total Cost(After Tax): $${totalCostAT}<br>     
   `;
 
     //Removing the error messages

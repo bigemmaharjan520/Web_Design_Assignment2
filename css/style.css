@@ -126,6 +126,7 @@ form .btn {
 .input-control {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .input-control input,

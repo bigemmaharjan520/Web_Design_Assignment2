@@ -171,7 +171,7 @@
 
           <!-- First Products to buy -->
           <div class="input-control">
-            <label>Select Products you want to buy</label>
+            <label>Select First Products you want to buy</label>
             <select id="product" name="product">
               <option value="">--------------- Select ---------------</option>
               <option value="7">Original T-shirt - $7.00</option>
@@ -189,9 +189,19 @@
             </select>
           </div>
 
+          <!-- Products of number you want to buy first -->
+          <div class="input-control">
+            <label>Quantity of First Product you want to buy</label>
+            <input
+              id="productNumberFirst"
+              type="number"
+              name="productNumberFirst"
+            />
+          </div>
+
           <!-- Second Products to buy -->
           <div class="input-control">
-            <label>Select Products you want to buy</label>
+            <label>Select Second Products you want to buy</label>
             <select id="secondproduct" name="secondproduct">
               <option value="">--------------- Select ---------------</option>
               <option value="7">Original T-shirt - $7.00</option>
@@ -207,6 +217,16 @@
               <option value="3">Shirt & Glasses - $3.00</option>
               <option value="4">Green T-shirt - $4.00</option>
             </select>
+          </div>
+
+          <!-- Products of number you want to buy second -->
+          <div class="input-control">
+            <label>Quantity of Second Product you want to buy</label>
+            <input
+              id="productNumberSecond"
+              type="number"
+              name="productNumberSecond"
+            />
           </div>
 
           <input class="btn" type="submit" value="Submit" />
